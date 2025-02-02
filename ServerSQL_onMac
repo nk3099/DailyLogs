@@ -1,0 +1,13 @@
+--Install MS Server SQL on Mac
+
+docker stop sql
+docker rm sql
+docker run -e "ACCEPT_EULA=1" -e "MSSQL_SA_PASSWORD=yourstrongpassword" -e "MSSQL_PID=Developer" -p 1433:1433 -d --name=sql mcr.microsoft.com/mssql/server
+
+https://hub.docker.com/r/microsoft/azure-sql-edge
+use: docker pull mcr.microsoft.com/azure-sql-edge
+
+References:
+https://www.youtube.com/watch?v=3BFxALltQaM
+
+
