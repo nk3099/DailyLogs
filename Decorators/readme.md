@@ -24,7 +24,8 @@ some_function = decorator_name(some_function)
 
 ####  ✅ Example: A Simple Decorator
 
-```def my_decorator(func):
+```
+def my_decorator(func):
     def wrapper():
         print("Before function call")
         func()
