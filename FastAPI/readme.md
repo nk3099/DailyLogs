@@ -12,3 +12,12 @@ via Web-Server:
 
 via Postman:
 <img width="1274" alt="Screenshot 2025-05-30 at 2 20 19 PM" src="https://github.com/user-attachments/assets/189f4a5d-9cfb-4398-ae26-f5d391d3b580" />
+
+
+
+[Psycopg](https://www.psycopg.org/docs/usage.html): PostgreSQL database adapter for Python
+
+<img width="723" alt="Screenshot 2025-05-31 at 4 06 47 PM" src="https://github.com/user-attachments/assets/1b31436c-ce8c-486c-88d0-61a78b8ab893" />
+
+Postgress Database:
+<img width="1470" alt="Screenshot 2025-05-31 at 4 07 58 PM" src="https://github.com/user-attachments/assets/199dba2f-52a6-4230-aaf5-283fdd465b9e" />
