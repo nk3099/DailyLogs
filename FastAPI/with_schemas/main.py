@@ -47,7 +47,7 @@ def get_posts():
     return {"data": my_posts }
 
 @app.post("/posts", status_code = status.HTTP_201_CREATED) #status code 201 Created
-def create_posts(payload: schemas.validate_post):
+def create_posts(payload: schemas.validate_postCreate):
    #cursor.execute(f""" INSERT INTO posts (title,content,published) VALUES ({posts.title},{posts.content},{posts.published})""") #this aslo works, but it is not safe against SQL injection attacks
    cursor.execute("""INSERT INTO posts (title, content, published) VALUES (%s, %s, %s) RETURNING * """, (payload.title, payload.content, payload.published))
    new_post = cursor.fetchone()  #fetch the newly created post
@@ -82,7 +82,7 @@ def delete_post(id: int):
 
 
 @app.put("/posts/{id}" )
-def update_post(id:int, post: schemas.validate_post):
+def update_post(id:int, post: schemas.validate_postCreate):
 
     cursor.execute(""" UPDATE posts SET title=%s,  content=%s, published=%s WHERE id=%s RETURNING *""",(post.title, post.content, post.published, str(id)))
     updated_post = cursor.fetchone()
