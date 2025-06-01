@@ -21,3 +21,8 @@ via Postman:
 
 Postgress Database:
 <img width="1470" alt="Screenshot 2025-05-31 at 4 07 58 PM" src="https://github.com/user-attachments/assets/199dba2f-52a6-4230-aaf5-283fdd465b9e" />
+
+
+Retrieving Data from Database:
+Workflow Demo : [here](https://github.com/user-attachments/assets/c56abdcb-7dd0-4ad3-97a7-9bbc57beca4b)
+
