@@ -4,3 +4,9 @@
 -> API will validate if token is valid - thereby, API then sends backs the data. <br>
 
 <img width="1437" alt="Screenshot 2025-06-01 at 8 04 32 PM" src="https://github.com/user-attachments/assets/35b673e7-e75a-4d10-817f-fe9d20467864" />
+
+**Please note**: JWT token is not Encrypted. <br>
+Instead made up of:<br>
+a)Header<br>
+b)Payload <br>
+c)Signature (ie. Hashing) <br>
