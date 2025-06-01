@@ -29,3 +29,19 @@ to Decode JWT token - Go to jwt website - [jwt.io](https://jwt.io/)
 
 ``` it has same User Id```
 <img width="1192" alt="Screenshot 2025-06-01 at 10 52 41 PM" src="https://github.com/user-attachments/assets/a1429e44-6776-42e1-89bc-c96ae56d1393" />
+
+
+#Protecting Routes
+![image](https://github.com/user-attachments/assets/ae609286-265c-41d8-95d9-c8ba172143fc)
+
+#Postman Environments:
+-> If the URL/port etc keeps changing w.r.t to different environment -> would result in all Collections to be updated. <br>
+-> Therefore, we can create suitable environment and assign URL/ports accordings as variables. So, the collections automatically take that up.
+
+![image](https://github.com/user-attachments/assets/a355baab-aaa4-4620-ab56-bc759b46f39f)
+
+## After switching to DEV environment:
+![image](https://github.com/user-attachments/assets/e1d3e715-abe4-48f7-b941-ccefe8c4b0ee)
+
+
+
