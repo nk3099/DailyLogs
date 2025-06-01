@@ -20,3 +20,12 @@ c)Signature (ie. Hashing) : whichcontains secret (which is not exposed)<br>
 -> We try to compare the User_typed_plain-password(string mostly) with Hashed_password(stored in DB) <br>
 -> by converting the plain-password using Hash method and if matches, then token is passed to User.<br>
 <img width="1447" alt="Screenshot 2025-06-01 at 8 31 26 PM" src="https://github.com/user-attachments/assets/723321fd-c584-4bc9-bc1c-94757eba47e4" />
+
+
+#JWT Verification:
+![image](https://github.com/user-attachments/assets/26ceda01-4286-45c1-8f00-aba4892a8d1c)
+
+to Decode JWT token - Go to jwt website - [jwt.io](https://jwt.io/)
+
+``` it has same User Id```
+<img width="1192" alt="Screenshot 2025-06-01 at 10 52 41 PM" src="https://github.com/user-attachments/assets/a1429e44-6776-42e1-89bc-c96ae56d1393" />
