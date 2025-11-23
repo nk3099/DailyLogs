@@ -48,3 +48,41 @@ Desktop/
 └── nk3099/
     └── DailyLogs/   (your GitHub repo)
 
+
+
+---------------
+Git Commands:
+----------------
+
+1.git status	--> Lists the files that have been modified, added, or deleted. This shows what changed, not how it changed.
+
+2.git diff	--> Shows the actual content changes (the line-by-line differences) for all modified files that are NOT YET staged (git add).
+
+3.git remote -v (short for "verbose") -->  is used to list the remote repositories that your local Git project is currently tracking.
+
+4.git remote set-url <remote_name> <new_url> -->
+command git remote set-url is used to change the URL that a remote nickname (like origin) points to.
+example: git remote set-url origin https://github.com/nk3099/neeraj-astro-blog.git
+
+
+5.How to Rename the main Branch
+Historically, the default branch was often called master.
+
+git branch -m <new-branch-name> --> Rename the Local Branch 
+Example (Renaming main to production):
+
+Make sure you are on the main branch: git checkout main
+
+Rename the local branch:
+git branch -m production
+
+
+6.the -u flag is short for --set-upstream.
+
+7.git push	--> The fundamental Git command.	Instructs Git to transfer or upload local changes to a remote repository.
+origin	--> The name of the remote repository.	By convention, origin is the alias for the main remote URL (where you cloned or initialized the project).
+main	--> The name of the local branch.	Specifies the local branch whose commits you want to upload.
+
+8.git log	--> Shows the full, detailed history of commits, including the commit hash, author, date, and commit message.
+
+
