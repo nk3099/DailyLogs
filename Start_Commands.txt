@@ -1,0 +1,106 @@
+1. Change prompts for terminal:
+https://www.youtube.com/watch?v=XVSZAwTXtAs 
+export PROMPT="nk3099 %1~ %# "; clear;
+
+Earlier:
+neeraj.kumar1@neeraj ~ % cd Desktop
+neeraj.kumar1@neeraj Desktop % 
+
+Later (after prompts changed):
+nk3099 ~ % cd Desktop
+nk3099 Desktop % 
+
+
+2. Creating Virtual Environment in projects:
+
+Step 1: Create and Activate a Virtual Environment
+Using the system Python (/Library/Developer/...) often leads to permission errors or "command not found" issues. Create an isolated environment instead.
+
+Run these commands in your terminal:
+# a. Create a virtual environment named 'venv'
+python3 -m venv venv
+
+# b. Activate the virtual environment
+source venv/bin/activate
+(You should see (venv) appear at the start of your command prompt line).
+
+Optional:
+# c. To Deactivate and delete your current virtual environment to start fresh
+deactivate
+rm -rf venv ##to delete the corrupted/wrong version folder
+
+Step 2: Install ApplicationName
+Now that the virtual environment is active, install ApplicationName.
+
+# a. Upgrade pip first (optional but good practice)
+pip install --upgrade pip
+
+# b. Install ApplicationName
+pip install ApplicationName
+
+
+------------BREW--------------
+🍺 Homebrew Setup for Airflow
+1. Install Homebrew (if not already installed)
+bash
+/bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
+After installation, make sure your shell is configured:
+
+bash
+echo 'eval "$(/opt/homebrew/bin/brew shellenv)"' >> ~/.zshrc
+source ~/.zshrc
+2. Install a Modern Python
+Pick Python 3.11 or 3.10 (both are stable for Airflow):
+
+bash
+brew install python@3.11
+Link it so python3 points to the Homebrew version:
+
+bash
+brew link python@3.11
+Check:
+
+bash
+python3 --version
+You should see something like Python 3.11.x.
+
+3. Create a Virtual Environment
+bash
+python3 -m venv venv
+source venv/bin/activate
+4. Install Airflow + Providers
+Upgrade pip and install Airflow with constraints:
+
+bash
+pip install --upgrade pip setuptools wheel
+
+pip install "apache-airflow==3.0.0" \
+  --constraint "https://raw.githubusercontent.com/apache/airflow/constraints-3.0.0/constraints-3.11.txt"
+
+# Install FAB provider for user management
+pip install apache-airflow-providers-fab
+5. Initialize Database
+bash
+export AIRFLOW_HOME=$(pwd)
+airflow db migrate
+6. Configure Auth Manager + Create User
+bash
+export AIRFLOW__CORE__AUTH_MANAGER="airflow.providers.fab.auth_manager.fab_auth_manager.FabAuthManager"
+
+airflow users create \
+    --username admin \
+    --firstname neeraj \
+    --lastname kumar \
+    --role Admin \
+    --email admin@domain.com \
+    --password admin
+7. Start Webserver + Scheduler
+bash
+airflow webserver -p 8080 &
+airflow scheduler &
+🔑 Why This Works
+Homebrew Python is compiled against OpenSSL 1.1.1+, not macOS’s outdated LibreSSL.
+
+Airflow + Gunicorn workers won’t crash with SIGSEGV.
+
+You now have a reproducible environment that avoids system conflicts.
