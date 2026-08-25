@@ -261,10 +261,20 @@ Think about the class/type of the returned object.
 Conceptually, `psycopg2` has something similar to:
 
 ```python
+
 class Connection:
 
     def cursor(self):
         return Cursor()
+
+    def commit(self):
+        pass
+
+    def rollback(self):
+        pass
+
+    def close(self):
+        pass
 
 
 class Cursor:
@@ -278,7 +288,15 @@ class Cursor:
 
     def fetchall(self):
         pass
+
+
+def connect(...):
+    # connect() is a FUNCTION
+    # It creates and returns a Connection object
+    return Connection()
+
 ```
+Note: connect() is not a method of the Connection class. It is a function provided by the psycopg2 module that creates/returns a connection object.
 
 This is a **simplified mental model** of what the library provides.
 
